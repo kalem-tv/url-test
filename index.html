@@ -28,7 +28,7 @@
 <body>
   <div class="container">
     <div id="url"></div>
-    <div id="timer" class="timer">0s</div>
+    <div id="timer" class="timer">0</div>
   </div>
 
   <script>
@@ -40,7 +40,7 @@
     const timerElement = document.getElementById('timer');
     setInterval(() => {
       seconds++;
-      timerElement.textContent = `${seconds}s`;
+      timerElement.textContent = `${seconds}`;
     }, 1000);
   </script>
 </body>
