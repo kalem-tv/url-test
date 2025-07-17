@@ -28,7 +28,7 @@
 <body>
   <div class="container">
     <div id="url"></div>
-    <div id="timer" class="timer"></div>
+    <div id="timer" class="timer">0s</div>
   </div>
 
   <script>
@@ -40,7 +40,7 @@
     const timerElement = document.getElementById('timer');
     setInterval(() => {
       seconds++;
-      timerElement.textContent = `Time since page load: ${seconds} second${seconds === 1 ? '' : 's'}`;
+      timerElement.textContent = `${seconds}s`;
     }, 1000);
   </script>
 </body>
