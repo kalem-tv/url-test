@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Display Full URL</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Display Full URL with Timer</title>
   <style>
     html, body {
       height: 100%;
@@ -14,17 +14,34 @@
       font-size: 2vw;
       text-align: center;
     }
-    .url {
+    .container {
       width: 50%;
       word-wrap: break-word;
+    }
+    .timer {
+      margin-top: 1rem;
+      font-size: 1.5vw;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="url" id="url"></div>
+  <div class="container">
+    <div id="url"></div>
+    <div id="timer" class="timer"></div>
+  </div>
 
   <script>
+    // Set full URL
     document.getElementById('url').textContent = window.location.href;
+
+    // Start timer
+    let seconds = 0;
+    const timerElement = document.getElementById('timer');
+    setInterval(() => {
+      seconds++;
+      timerElement.textContent = `Time since page load: ${seconds} second${seconds === 1 ? '' : 's'}`;
+    }, 1000);
   </script>
 </body>
 </html>
